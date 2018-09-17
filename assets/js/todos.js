@@ -18,9 +18,8 @@ $("input[type='text']").keypress(function(eve){
     if(eve.which === 13){
         var toDoText = $(this).val();
         if(toDoText){
-            $("ul").append("<li><span>X</span> "+toDoText+"</li>");
+            $("ul").append("<li><span><i class=\'far fa-trash-alt\'></i></span> "+toDoText+"</li>");
         }
-
     }
 })
 

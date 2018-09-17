@@ -23,3 +23,7 @@ $("input[type='text']").keypress(function(eve){
     }
 })
 
+$(".fa-plus").click(function(){
+   $("input[type='text']").fadeToggle(300);
+});
+

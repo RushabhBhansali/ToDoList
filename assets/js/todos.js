@@ -1,12 +1,26 @@
 //check off specific todos by clicking
-    $("li").click(function () {
+    $("ul").on("click","li",function () {
         $(this).toggleClass("completed");
     });
 
 //click on X to delete todo
-$("span").click(function (event) {
+$("ul").on("click","span", function (event) {
     $(this).parent().fadeOut(200,function () {
         $(this).remove();
     });
     event.stopPropagation();
+});
+
+/*There is a problem with the code below because the newley added
+elements will not have the listeners added on them. That is why we should be using on('click') */
+
+$("input[type='text']").keypress(function(eve){
+    if(eve.which === 13){
+        var toDoText = $(this).val();
+        if(toDoText){
+            $("ul").append("<li><span>X</span> "+toDoText+"</li>");
+        }
+
+    }
 })
+
